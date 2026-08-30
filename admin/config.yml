@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "content/uploads"
+public_folder: "/content/uploads"
+
+locale: "tr"
+
+collections:
+  - name: "projects"
+    label: "Projeler"
+    files:
+      - name: "projects"
+        label: "Proje Listesi"
+        file: "content/projects.json"
+        fields:
+          - label: "Projeler"
+            name: "projects"
+            widget: "list"
+            label_singular: "Proje"
+            summary: "{{title}} — {{status}}"
+            fields:
+              - { label: "Proje Adı", name: "title", widget: "string" }
+              - { label: "Açıklama", name: "description", widget: "text" }
+              - label: "Durum"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Devam Ediyor", value: "ongoing" }
+                  - { label: "Tamamlandı", value: "done" }
+              - { label: "Fotoğraf", name: "image", widget: "image", required: false, hint: "Proje kartında görünecek ana görsel." }
+              - { label: "Video (YouTube linki)", name: "video", widget: "string", required: false, hint: "Örn: https://www.youtube.com/watch?v=XXXXXXX — boş bırakılabilir." }
+              - { label: "Konum / Yıl", name: "meta", widget: "string", required: false, hint: "Örn: İstanbul · 2026" }

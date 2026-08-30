@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "title": "[Örnek] Lojistik Depo Kompleksi — İzmir",
+      "description": "AG dağıtım, aydınlatma ve yangın algılama tesisatı sahada devam ediyor. Bu kartı panelden düzenleyip kendi proje bilginizle değiştirebilirsiniz.",
+      "status": "ongoing",
+      "image": "",
+      "video": "",
+      "meta": "İzmir · 2026"
+    },
+    {
+      "title": "[Örnek] Üretim Tesisi — Kocaeli",
+      "description": "OG trafo montajı ve temel topraklama tesisatı tamamlandı. Bu kartı panelden düzenleyip kendi proje bilginizle değiştirebilirsiniz.",
+      "status": "done",
+      "image": "",
+      "video": "",
+      "meta": "Kocaeli · 2025"
+    }
+  ]
+}
