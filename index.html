@@ -392,10 +392,6 @@
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
   }
   .gallery-grid[hidden]{display:none;}
-  .gallery-loading{
-    grid-column:1/-1; text-align:center; padding:40px 0;
-    font-family:var(--font-mono); font-size:13px; color:#8891a3;
-  }
 
   .project-card{
     border:1px solid var(--steel-200); border-radius:6px; overflow:hidden;
@@ -496,12 +492,6 @@
   .field input::placeholder, .field textarea::placeholder{color:#5c6980;}
   .field input:focus, .field textarea:focus{border-color:var(--accent); outline:none;}
   .field textarea{resize:vertical; min-height:120px;}
-  .kvkk-check{
-    display:flex; align-items:flex-start; gap:10px; cursor:pointer;
-    font-size:13px; color:var(--steel-400); line-height:1.5;
-  }
-  .kvkk-check input{width:16px; height:16px; margin-top:2px; accent-color:var(--accent); flex:none;}
-  .kvkk-check a{color:var(--accent); text-decoration:underline;}
   .submit-btn{
     align-self:flex-start;
     font-family:var(--font-mono); font-size:14px; font-weight:500;
@@ -581,7 +571,6 @@
     .logo small{display:none;}
   }
 </style>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -797,11 +786,57 @@
     </div>
 
     <div class="gallery-grid reveal" id="devam-eden">
-      <p class="gallery-loading">Projeler yükleniyor…</p>
+      <div class="project-card">
+        <div class="project-media placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8891a3" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Örnek Görsel — Fotoğraf Bekleniyor</span>
+        </div>
+        <div class="project-body">
+          <span class="project-status ongoing"><span class="dt"></span>Devam Ediyor</span>
+          <h4>[Proje Adı Girin]</h4>
+          <p>[Kısa açıklama: kapsam, konum ve tesisat detayları buraya yazılacak.]</p>
+          <div class="project-meta">ÖRNEK KART — içerik bekleniyor</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-media placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8891a3" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Örnek Görsel — Fotoğraf Bekleniyor</span>
+        </div>
+        <div class="project-body">
+          <span class="project-status ongoing"><span class="dt"></span>Devam Ediyor</span>
+          <h4>[Proje Adı Girin]</h4>
+          <p>[Kısa açıklama: kapsam, konum ve tesisat detayları buraya yazılacak.]</p>
+          <div class="project-meta">ÖRNEK KART — içerik bekleniyor</div>
+        </div>
+      </div>
     </div>
 
     <div class="gallery-grid reveal" id="tamamlanan" hidden>
-      <p class="gallery-loading">Projeler yükleniyor…</p>
+      <div class="project-card">
+        <div class="project-media placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8891a3" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Örnek Görsel — Fotoğraf Bekleniyor</span>
+        </div>
+        <div class="project-body">
+          <span class="project-status done"><span class="dt"></span>Tamamlandı</span>
+          <h4>[Proje Adı Girin]</h4>
+          <p>[Kısa açıklama: kapsam, konum ve tesisat detayları buraya yazılacak.]</p>
+          <div class="project-meta">ÖRNEK KART — içerik bekleniyor</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-media placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8891a3" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Örnek Görsel — Fotoğraf Bekleniyor</span>
+        </div>
+        <div class="project-body">
+          <span class="project-status done"><span class="dt"></span>Tamamlandı</span>
+          <h4>[Proje Adı Girin]</h4>
+          <p>[Kısa açıklama: kapsam, konum ve tesisat detayları buraya yazılacak.]</p>
+          <div class="project-meta">ÖRNEK KART — içerik bekleniyor</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -898,10 +933,6 @@
           <label for="mesaj">Proje Detayı</label>
           <textarea id="mesaj" placeholder="Proje türü, konum ve kapsam hakkında kısaca bilgi verin..."></textarea>
         </div>
-        <label class="kvkk-check">
-          <input type="checkbox" id="kvkk-onay" required>
-          <span><a href="/kvkk.html" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum, kişisel verilerimin işlenmesini kabul ediyorum.</span>
-        </label>
         <button type="submit" class="submit-btn">Talebi Gönder →</button>
       </form>
     </div>
@@ -930,7 +961,6 @@
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#projeler">Projeler</a>
         <a href="#iletisim">İletişim</a>
-        <a href="/kvkk.html">KVKK Aydınlatma Metni</a>
       </div>
       <div class="footer-col">
         <h4>İletişim</h4>
@@ -940,7 +970,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 PALLAS TEKNOLOJİ A.Ş.</span>
-      <span><a href="/kvkk.html" style="color:inherit;">KVKK Aydınlatma Metni</a> · TASARIM &amp; UYGULAMA — TÜRKİYE</span>
+      <span>TASARIM &amp; UYGULAMA — TÜRKİYE</span>
     </div>
   </div>
 </footer>
@@ -951,64 +981,6 @@
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.add('js-ready');
   }
-
-  // Proje galerisi: content/projects.json dosyasından kartları otomatik oluşturur.
-  // Admin panelinden (/admin) yapılan her değişiklik, bu dosyayı günceller ve
-  // site yeniden yayınlandığında burada otomatik görünür.
-  function escapeHtml(str) {
-    const d = document.createElement('div');
-    d.textContent = str || '';
-    return d.innerHTML;
-  }
-  function youtubeEmbedUrl(url) {
-    if (!url) return null;
-    const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{6,})/);
-    return m ? `https://www.youtube.com/embed/${m[1]}` : null;
-  }
-  function projectCardHtml(p) {
-    const statusClass = p.status === 'done' ? 'done' : 'ongoing';
-    const statusLabel = p.status === 'done' ? 'Tamamlandı' : 'Devam Ediyor';
-    const yt = youtubeEmbedUrl(p.video);
-    let mediaHtml;
-    if (yt) {
-      mediaHtml = `<div class="project-media"><iframe src="${yt}" title="${escapeHtml(p.title)}" style="width:100%;height:100%;border:0;" allowfullscreen loading="lazy"></iframe></div>`;
-    } else if (p.image) {
-      mediaHtml = `<div class="project-media"><img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy"></div>`;
-    } else {
-      mediaHtml = `<div class="project-media placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#8891a3" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Görsel eklenmedi</span>
-        </div>`;
-    }
-    return `<div class="project-card">
-      ${mediaHtml}
-      <div class="project-body">
-        <span class="project-status ${statusClass}"><span class="dt"></span>${statusLabel}</span>
-        <h4>${escapeHtml(p.title)}</h4>
-        <p>${escapeHtml(p.description)}</p>
-        ${p.meta ? `<div class="project-meta">${escapeHtml(p.meta)}</div>` : ''}
-      </div>
-    </div>`;
-  }
-  fetch('/content/projects.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : { projects: [] })
-    .then(data => {
-      const projects = data.projects || [];
-      const ongoing = projects.filter(p => p.status !== 'done');
-      const done = projects.filter(p => p.status === 'done');
-      const ongoingEl = document.getElementById('devam-eden');
-      const doneEl = document.getElementById('tamamlanan');
-      ongoingEl.innerHTML = ongoing.length
-        ? ongoing.map(projectCardHtml).join('')
-        : '<p class="gallery-loading">Henüz devam eden proje eklenmedi.</p>';
-      doneEl.innerHTML = done.length
-        ? done.map(projectCardHtml).join('')
-        : '<p class="gallery-loading">Henüz tamamlanan proje eklenmedi.</p>';
-    })
-    .catch(() => {
-      document.getElementById('devam-eden').innerHTML = '<p class="gallery-loading">Projeler yüklenemedi.</p>';
-      document.getElementById('tamamlanan').innerHTML = '<p class="gallery-loading">Projeler yüklenemedi.</p>';
-    });
 
   // Proje galerisi sekme geçişi (Devam Eden / Tamamlanan)
   document.querySelectorAll('.gallery-tab').forEach(btn => {
@@ -1046,18 +1018,6 @@
   window.addEventListener('scroll', () => {
     nav.style.background = window.scrollY > 40 ? 'rgba(8,11,20,.96)' : 'rgba(8,11,20,.82)';
   });
-
-  // Netlify Identity: davet/onay e-postasındaki bağlantı buraya döner ve
-  // giriş/parola belirleme penceresini otomatik açar.
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
 </script>
 
 </body>
